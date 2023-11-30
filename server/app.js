@@ -29,7 +29,7 @@ app.post("/moveUp", (req, res) => {
     let steps = req.body.steps;
     let speed = 500;
     const dirname = __dirname.split("server")[0];
-    exec('python ' + path.join(dirname,'/Vending_machine/command.py') + ' 1 1 ' + steps + ' ' + speed , (err, stdout, stderr) => {
+    exec('python ' + path.join(dirname,'/Raspi/command.py') + ' 1 1 ' + steps + ' ' + speed , (err, stdout, stderr) => {
         if (err) {
             // node couldn't execute the command
             console.log(err);
@@ -49,7 +49,7 @@ app.post("/moveDown", (req, res) => {
     let steps = req.body.steps;
     let speed = 500;
     const dirname = __dirname.split("server")[0];
-    exec('python ' + path.join(dirname,'/Vending_machine/command.py') + ' 1 2 ' + steps + ' ' + speed , (err, stdout, stderr) => {
+    exec('python ' + path.join(dirname,'/Raspi/command.py') + ' 1 2 ' + steps + ' ' + speed , (err, stdout, stderr) => {
         if (err) {
             // node couldn't execute the command
             console.log(err);

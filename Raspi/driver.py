@@ -19,6 +19,9 @@ class Stepper:
         print(self.STEP)
         print(self.ENABLE)
 
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setwarnings(False)
+
         GPIO.setup(self.DIR, GPIO.OUT)
         GPIO.setup(self.STEP, GPIO.OUT)
         GPIO.setup(self.ENABLE, GPIO.OUT)
@@ -77,7 +80,7 @@ def main():
     )
 
     stepper.enableMotor()
-#   stepper.turn(1, 400, 300)
+    stepper.turn(1, 400, 300)
     sleep(1)
     stepper.turn(1, 100, 300)
     sleep(5)
@@ -85,4 +88,4 @@ def main():
     stepper.disableMotor()
 
 
-main()
+#main()
