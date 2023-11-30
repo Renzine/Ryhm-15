@@ -23,9 +23,11 @@ if argument1 == "1":
         #stepper.calibrate()
         print("INVALID ARG1")
     elif argument2 == "1":  # moveUp function
+        stepper.enableMotor()
         argument3 = int(sys.argv[3])  # steps
         spd = int(sys.argv[4])  # speed
         stepper.turn(1, argument3, spd)
+        stepper.disableMotor()
 
     elif argument2 == "2":  # moveDown function
         argument3 = int(sys.argv[3])  # steps

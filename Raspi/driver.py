@@ -29,11 +29,11 @@ class Stepper:
         GPIO.output(self.ENABLE, GPIO.HIGH)
 
     def enableMotor(self):
-        GPIO.output(self.ENABLE, GPIO.LOW)
+        GPIO.output(self.ENABLE, GPIO.HIGH)
         self.enabled = 1
 
     def disableMotor(self):
-        GPIO.output(self.ENABLE, GPIO.HIGH)
+        GPIO.output(self.ENABLE, GPIO.LOW)
         self.enabled = 0
 
     def turn(self, dir, steps, speed):
