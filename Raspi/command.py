@@ -30,7 +30,8 @@ if argument1 == "1":
         stepper.disableMotor()
 
     elif argument2 == "2":  # moveDown function
+        stepper.enableMotor()
         argument3 = int(sys.argv[3])  # steps
         spd = int(sys.argv[4])  # speed
         stepper.turn(0, argument3, spd)
-
+        stepper.disableMotor()

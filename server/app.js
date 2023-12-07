@@ -45,7 +45,7 @@ app.post("/moveUp", (req, res) => {
 })
 
 app.post("/moveDown", (req, res) => {
-
+    console.log("ADASDSAASDSDSA");
     let steps = req.body.steps;
     let speed = 500;
     const dirname = __dirname.split("server")[0];

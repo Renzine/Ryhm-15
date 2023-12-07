@@ -57,7 +57,26 @@ function moveUp(steps){
 }
 
 function moveDown(steps){
-    console.log(steps);
+    if(steps > 0 && steps < 2000) {
+        let data = {steps: steps};
+        fetch("/moveDown", {
+            method: "POST",
+            mode: "cors",
+            cache: "no-cache",
+            credentials: "same-origin",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            redirect: "follow",
+            referrerPolicy: "no-referrer",
+            body: JSON.stringify(data),
+        }).then(function (e) {
+            console.log("SENT DATA");
+        })
+
+    }else{
+        console.log("Error: No value set.");
+    }
 }
 
 function zero(){
